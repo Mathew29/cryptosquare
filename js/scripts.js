@@ -29,9 +29,16 @@ function createSquare(size, sentence) {
       i++;
       squareArray.push(sentence[i])
     }
+    (newRow + "i") = squareArray.splice()
+    i++
   }
   console.log(squareArray);
-  console.log(size)
+  console.log(size % size === 0)
+  return squareArray;
+}
+
+function checkSpaces(character) {
+  return (character != " ");
 }
 
 
@@ -41,7 +48,8 @@ $(document).ready(function() {
     event.preventDefault();
     var sentence = $("input#sentence").val();
     var squareSize = determineLength(sentence);
-    createSquare(squareSize, sentence);
+    var squareArray = createSquare(squareSize, sentence);
+
     $("#result").show();
     $("#result").text(result);
   });
